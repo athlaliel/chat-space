@@ -32,38 +32,40 @@ Things you may want to cover:
 |email|string|null: false|
 |password|string|null: false|
 |nickname|string|null: false|
-|groupname|string|null: false|
 
 ### Association
 - has_many :messages
-- has_many :groups
+- has_many through:groups_users
+- belongs_to :groups_user
 
 ## messagesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|image|text||null: false|
-|text|text||null: false|
-|user_id|references|null: false, foreign_key: true|
-|group_id|references|null: false, foreign_key: true|
+|image|text|
+|text|text|
+|user|references|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :users
+- belongs_to :user
+- has_many :groups
 
 ## groupsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|groupname|string|null: false|
-|user_id|integer|null: false|
+|name|string|null: false|
 ### Association
-- has_many :users
+- has_many through:users
+- has_many :messages
 
-## group-usersテーブル
+## group_usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|group_id|string|null: false, foreign_key: true|
-|user_id|integer|null: false, foreign_key: true|
+|group_id|references|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
 ### Association
-- has_many :users
+- belongs_to :user
+- belongs_to :group
