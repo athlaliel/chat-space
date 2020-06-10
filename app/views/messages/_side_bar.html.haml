@@ -2,13 +2,13 @@
   .Side_bar__user_name
     .Side_bar__user_name__list
       .Side_bar__user_name__list__username
-        test
+        = current_user.name
       .Side_bar__user_name__list__icon
         .Side_bar__user_name__list__icon__icon1
           = link_to "#" , class: "Side_bar__user_name__list__icon__icon1" do
             = icon('fas' , 'edit')
         .Side_bar__user_name__list__icon__icon2
-          = link_to "#" , class: "Side_bar__user_name__list__icon__icon2" do
+          = link_to  edit_user_path(current_user), class: "Side_bar__user_name__list__icon__icon2" do
             = icon('fas' , 'cog')
   .Side_bar__group
     .Side_bar__group__box
