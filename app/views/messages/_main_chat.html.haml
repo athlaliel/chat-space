@@ -1,0 +1,48 @@
+.Main
+  .Main__header
+    .Main__header__left
+      .Main__header__left__top
+        test
+      .Main__header__left__bottom
+        Member : Masa
+    .Main__header__righttop
+      = link_to "Edit" , "#"
+
+  .Main__messeage_list
+    .Main__messeage_list__box
+      .Main__messeage_list__box__top
+        .Main__messeage_list__box__top__down
+          masa
+        .Main__messeage_list__box__top__second
+          2020年06月08日 21時19分
+      .Main__messeage_list__box__bottom
+        .Main__messeage_list__box__bottom__second
+          おはよう！
+
+      .Main__messeage_list__box__top
+        .Main__messeage_list__box__top__down
+          masa
+        .Main__messeage_list__box__top__second
+          2020年06月08日 21時19分
+      .Main__messeage_list__box__bottom
+        .Main__messeage_list__box__bottom__second
+          おはよう！
+
+      .Main__messeage_list__box__top
+        .Main__messeage_list__box__top__down
+          masa
+        .Main__messeage_list__box__top__second
+          2020年06月08日 21時19分
+      .Main__messeage_list__box__bottom
+        .Main__messeage_list__box__bottom__second
+          おはよう！
+
+  .Main__footer
+    %form.Main__footer__form
+      .Main__footer__form__box
+        %input{type: "text_field" , class: "Main__footer__form__box__text" , placeholder: "type a message"}
+        %label{class: "Main__footer__form__box__image"}
+          = icon('far' , 'image')
+          %input{type: "file" , class: "Main__footer__form__box__image--file"}
+      %input{type: "submit", value: "Send", class: "Main__footer__form__box__submit-btn"}
+
